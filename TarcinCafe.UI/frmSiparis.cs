@@ -11,8 +11,10 @@ using TarcinCafe.Data;
 
 namespace TarcinCafe.UI
 {
+    
     public partial class frmSiparis : Form
     {
+        public event EventHandler<TasindiEventArgs> Tasindi;
         KafeVeri _db = new KafeVeri();
         Siparis _siparis = new Siparis();
         BindingList<SiparisDetay> _blSiparisDetay ;
@@ -79,12 +81,24 @@ namespace TarcinCafe.UI
         private void btnOdemeAl_Click(object sender, EventArgs e)
         {
             _siparis.Durum = SiparisDurum.Odendi;
-            SiparisiKapa(Convert.ToDecimal(_siparis.ToplamTutarTL));
+            SiparisiKapa(Convert.ToDecimal(_siparis.ToplamTutar()));
         }
 
         private void btnAnasayfa_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnTasi_Click(object sender, EventArgs e)
+        {
+
+            if (cbMasaNo.SelectedIndex < 0)
+                return;
+            int eskiNo = Convert.ToInt32(lblMasaNo.Text);
+            _siparis.MasaNo = (int)cbMasaNo.SelectedItem;
+            if (Tasindi != null)
+                Tasindi(this, new TasindiEventArgs(eskiNo,_siparis.MasaNo));
+            SayfayiYenile();
         }
     }
 }

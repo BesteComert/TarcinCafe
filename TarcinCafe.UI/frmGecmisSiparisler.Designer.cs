@@ -58,21 +58,22 @@ namespace TarcinCafe.UI
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvSiparisDetaylar);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Size = new System.Drawing.Size(784, 561);
+            this.splitContainer1.Size = new System.Drawing.Size(800, 561);
             this.splitContainer1.SplitterDistance = 261;
             this.splitContainer1.TabIndex = 0;
             // 
             // dgvSiparisler
             // 
             this.dgvSiparisler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSiparisler.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvSiparisler.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvSiparisler.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvSiparisler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSiparisler.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvSiparisler.Location = new System.Drawing.Point(0, 36);
             this.dgvSiparisler.Name = "dgvSiparisler";
+            this.dgvSiparisler.RowHeadersVisible = false;
             this.dgvSiparisler.RowTemplate.Height = 25;
-            this.dgvSiparisler.Size = new System.Drawing.Size(784, 225);
+            this.dgvSiparisler.Size = new System.Drawing.Size(800, 225);
             this.dgvSiparisler.TabIndex = 13;
             // 
             // label1
@@ -94,9 +95,11 @@ namespace TarcinCafe.UI
             this.dgvSiparisDetaylar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvSiparisDetaylar.Location = new System.Drawing.Point(0, 35);
             this.dgvSiparisDetaylar.Name = "dgvSiparisDetaylar";
+            this.dgvSiparisDetaylar.RowHeadersVisible = false;
             this.dgvSiparisDetaylar.RowTemplate.Height = 25;
-            this.dgvSiparisDetaylar.Size = new System.Drawing.Size(784, 261);
+            this.dgvSiparisDetaylar.Size = new System.Drawing.Size(800, 261);
             this.dgvSiparisDetaylar.TabIndex = 15;
+            this.dgvSiparisDetaylar.SelectionChanged += new System.EventHandler(this.dgvSiparisDetaylar_SelectionChanged);
             // 
             // label2
             // 
@@ -112,7 +115,7 @@ namespace TarcinCafe.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(800, 561);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);

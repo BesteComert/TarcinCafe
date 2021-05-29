@@ -32,26 +32,32 @@ namespace TarcinCafe.UI
             this.dgvUrunler = new System.Windows.Forms.DataGridView();
             this.btnEkle = new System.Windows.Forms.Button();
             this.nudFiyat = new System.Windows.Forms.NumericUpDown();
-            this.cbUrun = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDuzenle = new System.Windows.Forms.Button();
-            this.btnSil = new System.Windows.Forms.Button();
+            this.btnVazgec = new System.Windows.Forms.Button();
+            this.txtUrunAd = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUrunler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFiyat)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvUrunler
             // 
+            this.dgvUrunler.AllowUserToAddRows = false;
+            this.dgvUrunler.AllowUserToDeleteRows = false;
             this.dgvUrunler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUrunler.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvUrunler.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUrunler.Location = new System.Drawing.Point(12, 104);
             this.dgvUrunler.Name = "dgvUrunler";
+            this.dgvUrunler.ReadOnly = true;
+            this.dgvUrunler.RowHeadersVisible = false;
             this.dgvUrunler.RowTemplate.Height = 25;
             this.dgvUrunler.Size = new System.Drawing.Size(760, 438);
             this.dgvUrunler.TabIndex = 11;
+            this.dgvUrunler.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUrunler_CellDoubleClick);
+            this.dgvUrunler.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvUrunler_KeyDown);
             // 
             // btnEkle
             // 
@@ -63,6 +69,7 @@ namespace TarcinCafe.UI
             this.btnEkle.TabIndex = 10;
             this.btnEkle.Text = "EKLE";
             this.btnEkle.UseVisualStyleBackColor = false;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // nudFiyat
             // 
@@ -82,15 +89,6 @@ namespace TarcinCafe.UI
             0,
             0,
             0});
-            // 
-            // cbUrun
-            // 
-            this.cbUrun.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbUrun.FormattingEnabled = true;
-            this.cbUrun.Location = new System.Drawing.Point(12, 52);
-            this.cbUrun.Name = "cbUrun";
-            this.cbUrun.Size = new System.Drawing.Size(194, 32);
-            this.cbUrun.TabIndex = 8;
             // 
             // label7
             // 
@@ -122,29 +120,41 @@ namespace TarcinCafe.UI
             this.btnDuzenle.TabIndex = 10;
             this.btnDuzenle.Text = "DÜZENLE";
             this.btnDuzenle.UseVisualStyleBackColor = false;
+            this.btnDuzenle.Visible = false;
+            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
             // 
-            // btnSil
+            // btnVazgec
             // 
-            this.btnSil.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnSil.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSil.Location = new System.Drawing.Point(660, 47);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(112, 41);
-            this.btnSil.TabIndex = 10;
-            this.btnSil.Text = "SİL";
-            this.btnSil.UseVisualStyleBackColor = false;
+            this.btnVazgec.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnVazgec.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVazgec.Location = new System.Drawing.Point(660, 47);
+            this.btnVazgec.Name = "btnVazgec";
+            this.btnVazgec.Size = new System.Drawing.Size(112, 41);
+            this.btnVazgec.TabIndex = 10;
+            this.btnVazgec.Text = "VAZGEÇ";
+            this.btnVazgec.UseVisualStyleBackColor = false;
+            this.btnVazgec.Visible = false;
+            this.btnVazgec.Click += new System.EventHandler(this.btnVazgec_Click);
+            // 
+            // txtUrunAd
+            // 
+            this.txtUrunAd.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtUrunAd.Location = new System.Drawing.Point(12, 52);
+            this.txtUrunAd.Name = "txtUrunAd";
+            this.txtUrunAd.Size = new System.Drawing.Size(206, 32);
+            this.txtUrunAd.TabIndex = 12;
             // 
             // frmUrunler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.txtUrunAd);
             this.Controls.Add(this.dgvUrunler);
-            this.Controls.Add(this.btnSil);
+            this.Controls.Add(this.btnVazgec);
             this.Controls.Add(this.btnDuzenle);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.nudFiyat);
-            this.Controls.Add(this.cbUrun);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -164,10 +174,10 @@ namespace TarcinCafe.UI
         private System.Windows.Forms.DataGridView dgvUrunler;
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.NumericUpDown nudFiyat;
-        private System.Windows.Forms.ComboBox cbUrun;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDuzenle;
-        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button btnVazgec;
+        private System.Windows.Forms.TextBox txtUrunAd;
     }
 }

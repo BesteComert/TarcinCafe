@@ -129,6 +129,7 @@ namespace TarcinCafe.UI
             this.btnTasi.TabIndex = 3;
             this.btnTasi.Text = "TAŞI";
             this.btnTasi.UseVisualStyleBackColor = false;
+            this.btnTasi.Click += new System.EventHandler(this.btnTasi_Click);
             // 
             // btnIptal
             // 
@@ -229,6 +230,7 @@ namespace TarcinCafe.UI
             this.dgvSiparisDetaylar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSiparisDetaylar.Location = new System.Drawing.Point(14, 112);
             this.dgvSiparisDetaylar.Name = "dgvSiparisDetaylar";
+            this.dgvSiparisDetaylar.RowHeadersVisible = false;
             this.dgvSiparisDetaylar.RowTemplate.Height = 25;
             this.dgvSiparisDetaylar.Size = new System.Drawing.Size(461, 438);
             this.dgvSiparisDetaylar.TabIndex = 4;

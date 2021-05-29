@@ -31,7 +31,7 @@ namespace TarcinCafe.UI
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ürünlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.urunlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.geçmişSiparişlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lvMasalar = new System.Windows.Forms.ListView();
             this.imgList = new System.Windows.Forms.ImageList(this.components);
@@ -41,7 +41,7 @@ namespace TarcinCafe.UI
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ürünlerToolStripMenuItem,
+            this.urunlerToolStripMenuItem,
             this.geçmişSiparişlerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -49,12 +49,12 @@ namespace TarcinCafe.UI
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // ürünlerToolStripMenuItem
+            // urunlerToolStripMenuItem
             // 
-            this.ürünlerToolStripMenuItem.Name = "ürünlerToolStripMenuItem";
-            this.ürünlerToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.ürünlerToolStripMenuItem.Text = "Ürünler";
-            this.ürünlerToolStripMenuItem.Click += new System.EventHandler(this.ürünlerToolStripMenuItem_Click);
+            this.urunlerToolStripMenuItem.Name = "urunlerToolStripMenuItem";
+            this.urunlerToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.urunlerToolStripMenuItem.Text = "Ürünler";
+            this.urunlerToolStripMenuItem.Click += new System.EventHandler(this.urunlerToolStripMenuItem_Click);
             // 
             // geçmişSiparişlerToolStripMenuItem
             // 
@@ -94,6 +94,7 @@ namespace TarcinCafe.UI
             this.Name = "frmAna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tarçın Kafe";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAna_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -104,7 +105,7 @@ namespace TarcinCafe.UI
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ürünlerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem urunlerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem geçmişSiparişlerToolStripMenuItem;
         private System.Windows.Forms.ListView lvMasalar;
         private System.Windows.Forms.ImageList imgList;
